@@ -1,7 +1,13 @@
-  Instructions regarding Seattle Iteration of Libre Laptops for Youth
+#   Seattle Iteration : Libre Laptops for Youth
   
+## What we are doing
+
   We are starting with a pile of Lenovo laptops with the factory BIOS. Our remit: Liberate these laptops.
   We mean to make these as RyF as possible per https://www.fsf.org/resources/hw/endorsement/respects-your-freedom
+
+## How we are doing it
+
+ 
   
   First we examine the machines. Boot into a Debian Live image and run:
   
@@ -35,5 +41,12 @@
   
   When the flash is complete it's time to install the OS. iirc Libreboot uses GRUB2 as payload, so installing may require some GRUB hacking in order to coax the machines to use the install media.
   Debian or Trisquel? IMO Debian main is 'free enough', but ymmv.
+  
+  ## What's included in this project
+  
+  * scripts for producing USB-HDD filesystem for working on laptops (using debootstrap and friends)
+  * PXE images for use with [PXE Install Server](https://github.com/freegeek-seattle/install_pxeserver)
+  * automation around building Libreboot images
+  
   
   
