@@ -1,0 +1,11 @@
+# /etc/fstab: static file system information.
+#
+# file system    mount point   type    options                  dump pass
+
+/dev/XXX         /boot         ext3    ro,nosuid,nodev          0    2
+
+/dev/XXX         none          swap    sw                       0    0
+proc             /proc         proc    defaults                 0    0
+
+# Mountpoint / will be appended by chrootstick.sh, with the following form:
+# /dev/XXX         /             ext3    defaults                 0    1
