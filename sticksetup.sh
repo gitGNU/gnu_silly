@@ -2,24 +2,17 @@
 
 set -e
 
-[ $PWD -eq $MOUNTPART] && echo "$PWD is not chroot, exiting" && exit
+# Usage: `./sticksetup.sh [DEVICE]`
+#  DEVICE => /dev/sd[a-z]
+# Erases DEVICE, makes a single Linux FS partition, and writes FS to partition
 
-grub-install $TARGET_DEVICE && update-grub
 
-FSTAB_STRING="$(blkid $TARGET_PART) / ext4 defaults,errors=remount-ro 0 1"
+TARGET_DEVICE = $1
 
-echo $FSTAB_STRING >> /etc/fstab
+# non-interactively format 
 
-echo "lilbooty" > /etc/hostname
+# write filesystem
 
-dpkg-reconfigure locales
+mke2fs $TARGET_DEVICE
 
-passwd
-
-adduser user
-
-apt-get clean
-
-update-initramfs -u -k all
-
-exit
+return 0
