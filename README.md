@@ -9,13 +9,18 @@
 
  
   
-  First we examine the machines. Boot into a Debian Live image and run:
+### First we examine the machines. 
+
+Boot into a Debian Live image and run...
   
-  dmidecode
-  lspci
-  lsusb
-  hwinfo if avail
-  other?
+  * dmidecode
+  * lspci
+  * lsusb
+  * hwinfo
+  * lshw
+  * other?
+  
+  ... and save the result in a file.
   
   Next we find a UUID for the machine. The UUID can be that of the motherboard as reported by dmidecode or can be a serial number, etc.
   MAC address will also work (even though not guaranteed universally unique, should be unique among vendor models).
@@ -24,7 +29,7 @@
   Shred and remove hard disk drives if any. Test RAM and fill up slots as availability permits.
   When the hardware is ready, test it. SMART and Memtest86, what else?
   
-  When hardware is profiled and ready, it's time to re-flash.
+ ### When hardware is profiled and ready, it's time to re-flash.
   
   First, backup the existing BIOS image.
 	
@@ -47,6 +52,17 @@
   * scripts for producing USB-HDD filesystem for working on laptops (using debootstrap and friends)
   * PXE images for use with [PXE Install Server](https://github.com/freegeek-seattle/install_pxeserver)
   * automation around building Libreboot images
+  
+  ## Caveats
+  
+  ### as of 20160306 the scripts don't work. 
+  They are dangerous in the wrong hands, so don't run them if you don't know what you are doing.
+  Don't run them even if you *do* know what you are doing, but do use them as a guide for entering commands into the shell if that helps.
+  
+  ## TODO
+  
+  ### First version of scripts only supports MBR and does not add swap; in future GPT and UEFI support is desirable.
+  
   
   
   
