@@ -1,7 +1,10 @@
 #!/bin/bash
-
+set -e
+set -x
 #Usage: `chrootstick [DEVICE]`
 # chroot into prepared stick and set up installed system to be bootable
+MOUNTPOINT="./temp-mount-stick"
+TARGET_DEVICE="/dev/disk/by-uuid/$1"
 
 sudo chroot $MOUNTPOINT 
 

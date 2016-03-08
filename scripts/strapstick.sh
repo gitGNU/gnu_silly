@@ -1,12 +1,13 @@
 #!/bin/sh
 set -e
-
+set -x
 # Usage: `sh strapstick.sh /dev/somedevice`
 # Mounts the specified somedevice and debootstraps it
 
 
-TARGET_DEVICE=$1
-echo "$TARGET_DEVICE set to $1"
+TARGET_DEVICE="/dev/disk/by-uuid/$1"
+
+echo "$TARGET_DEVICE has UUID $1"
 
 # Hardcoded for now, later we'll extract the relevant data from `lsblk` and construct this $TARGET_PART dynamically
 # Or perhaps not, since prepstick.sh will only make one partition
