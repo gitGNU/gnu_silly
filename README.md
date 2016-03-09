@@ -29,7 +29,7 @@ Boot into a Debian Live image and run...
   Shred and remove hard disk drives if any. Test RAM and fill up slots as availability permits.
   When the hardware is ready, test it. SMART and Memtest86, what else?
   
- ### When hardware is profiled and ready, it's time to re-flash.
+### When hardware is profiled and ready, it's time to re-flash.
   
   First, backup the existing BIOS image.
 	
@@ -47,21 +47,21 @@ Boot into a Debian Live image and run...
   When the flash is complete it's time to install the OS. iirc Libreboot uses GRUB2 as payload, so installing may require some GRUB hacking in order to coax the machines to use the install media.
   Debian or Trisquel? IMO Debian main is 'free enough', but ymmv.
   
-  ## What's included in this project
+## What's included in this project
   
   * scripts for producing USB-HDD filesystem for working on laptops (using debootstrap and friends)
   * PXE images for use with [PXE Install Server](https://github.com/freegeek-seattle/install_pxeserver)
   * automation around building Libreboot images
   
-  ## Caveats
+## Caveats
   
-  ### as of 20160306 the scripts don't work. 
+### as of 20160306 the scripts don't work. 
   They are dangerous in the wrong hands, so don't run them if you don't know what you are doing.
   Don't run them even if you *do* know what you are doing, but do use them as a guide for entering commands into the shell if that helps.
   
-  ## TODO
+## TODO
   
-  ### First version of scripts only supports MBR and does not add swap; in future GPT and UEFI support is desirable.
+### First version of scripts only supports MBR and does not add swap; in future GPT and UEFI support is desirable.
   
   
   

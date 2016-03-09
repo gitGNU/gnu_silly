@@ -6,7 +6,7 @@ set -e
 # Usage: `./sticksetup.sh [DEVICE]`
 #  DEVICE => /dev/sd[a-z]
 # Erases DEVICE partition table, makes a single Linux FS partition, and writes FS to partition
-# DO NOT USE on a stick that containsvalued data!
+# DO NOT USE on a stick that contains valued data!
 
 TARGET_DEVICE="/dev/disk/by-uuid/$1"
 
