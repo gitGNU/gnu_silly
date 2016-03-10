@@ -4,15 +4,18 @@ set -x
 # Usage: `sh strapstick.sh /dev/somedevice`
 # Mounts the specified somedevice and debootstraps it
 
+. ./functions.sh
 
 TARGET_DEVICE="/dev/disk/by-uuid/$1"
 
-echo "$TARGET_DEVICE has UUID $1"
+devicePresent $TARGET_DEVICE
+
+[ debootstrap --help ]
 
 # Hardcoded for now, later we'll extract the relevant data from `lsblk` and construct this $TARGET_PART dynamically
 # Or perhaps not, since prepstick.sh will only make one partition
 
-TARGET_PART=/dev/sdc1
+TARGET_PART=$TARGET_DEVICE1
 
 echo $TARGET_PART || (echo "no TARGET_PART" && false)
 

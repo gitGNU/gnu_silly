@@ -28,7 +28,7 @@ grub-install $TARGET_DEVICE && update-grub
 
 # Mounts
 FSTAB_STRING="$(blkid $TARGET_PART) / ext4 defaults,errors=remount-ro 0 1"
-[ -e /etc/fstab ] || cat ./fstab > /etc/fstab]
+[ -e $MOUNTPOINT/etc/fstab ] || cat ./fstab > /etc/fstab ]
 echo $FSTAB_STRING >> /etc/fstab
 
 mount -a

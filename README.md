@@ -55,13 +55,13 @@ Boot into a Debian Live image and run...
   
 ## Caveats
   
-### as of 20160306 the scripts don't work. 
+  * as of 20160306 the scripts don't work. 
   They are dangerous in the wrong hands, so don't run them if you don't know what you are doing.
   Don't run them even if you *do* know what you are doing, but do use them as a guide for entering commands into the shell if that helps.
   
 ## TODO
   
-### First version of scripts only supports MBR and does not add swap; in future GPT and UEFI support is desirable.
+### First version of scripts will only support MBR and not add swap; in future GPT and UEFI support is desirable.
   
   
   
