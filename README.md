@@ -31,20 +31,20 @@ Boot into a Debian Live image and run...
   
 ### When hardware is profiled and ready, it's time to re-flash.
   
-  First, backup the existing BIOS image.
+1. First, backup the existing BIOS image.
 	
   https://www.coreboot.org/Board:lenovo/x60/Installation#Back_up_the_original_proprietary_firmware
   
   BIOS images are specific to the unit. When the backup is made, name it after the UUID *and name* of the machine from whence it came.
   
-  When the BIOS backup is done, you are almost ready to flash. 
+2. When the BIOS backup is done, you are almost ready to flash. 
   
   https://libreboot.org/docs/install/index.html#flashrom_lenovobios
   
   Follow the directions, read the scripts, remember that there are two steps (i945lenovo_firstflash and i945lenovo_secondflash).
   This process may not be rendered non-interactive because of the two steps requiring a reboot between them.
   
-  When the flash is complete it's time to install the OS. iirc Libreboot uses GRUB2 as payload, so installing may require some GRUB hacking in order to coax the machines to use the install media.
+3. When the flash is complete it's time to install the OS. iirc Libreboot uses GRUB2 as payload, so installing may require some GRUB hacking in order to coax the machines to use the install media.
   Debian or Trisquel? IMO Debian main is 'free enough', but ymmv.
   
 ## What's included in this project

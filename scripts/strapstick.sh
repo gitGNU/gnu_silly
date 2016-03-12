@@ -26,7 +26,7 @@ MOUNTPOINT="./temp-mount-stick" && echo "targeting $TARGET_PART at $MOUNTPOINT"
 sudo mount $TARGET_PART ./temp-mount-stick || (echo "could not mount $TARGET_PART at $MOUNTPOINT" && return "ENOHORSE")
 
 # Thanks to https://www.linuxquestions.org/questions/debian-26/how-to-install-debian-using-debootstrap-4175465295/
-[ -e $MOUNTPOINT/strap-status ] || (sudo debootstrap --include linux-image-amd64,grub-pc,locales --arch amd64 stable $MOUNTPOINT http://ftp.us.debian.org/debian  && touch $MOUNTPOINT/strap-status)
+strapping amd64 $MOUNTPOINT
 
 
 
