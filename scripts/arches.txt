@@ -1,0 +1,8 @@
+amd64
+arm64
+mipsel
+powerpc
+ppc64el
+s390
+s390x
+sparc

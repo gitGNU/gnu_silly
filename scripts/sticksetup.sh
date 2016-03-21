@@ -14,7 +14,7 @@ echo "WARNING! This will destroy ALL DATA on the device $TARGET_DEVICE!"
 
 
 
-[ -z $(sudo fdisk -l | grep sdc\n) ] || (echo "Existing partitions on $TARGET_DEVICE, aborting. Maybe run clearstick.sh first?" && return 1)
+[ -z $(sudo fdisk -l | grep sdc[[::digit:]]) ] || (echo "Existing partitions on $TARGET_DEVICE, aborting. Maybe run clearstick.sh first?" && return 1)
 
 
 # non-interactively format 

@@ -12,9 +12,16 @@ sudo chroot $MOUNTPOINT
 
 ## strapstick.sh writes strap-status file
 [ -e /strap-status ]
+# Don't overwrite these if they exist
+[ -e /etc/hosts ] || ${cat ./hosts.txt > /etc/hosts; echo 'creating hostfile'>&2 }
+[ -e /etc/network/interfaces ] || cat ./interfaces > /etc/network/interfaces
 
 ## Are we in chroot?
 [ $PWD -eq $MOUNTPART ] && (echo "$PWD is not chroot, exiting" && return 1)
+# Use hostname check instead
+# Actually let's use fstab:
+
+# if uuid mounted at / -ne TARGET_DEVICE, then we're not in chroot!
 
 # Bootloader
 grub-install $TARGET_DEVICE && update-grub
@@ -41,10 +48,8 @@ echo "lilbooty" > /etc/hostname
 
 dpkg-reconfigure locales tzdata
 
-## These shouldn't exist, but if they do don't zap em
 
-[ -e /etc/hosts ] || cat ./hosts.txt > /etc/hosts
-[ -e /etc/network/interfaces ] || cat ./interfaces > /etc/network/interfaces
+
 
 passwd
 
