@@ -58,5 +58,5 @@ clearStick () {
 
 get_UUID () {
     # Usage: First run the script, then insert the stick when prompted.
-    DEVICES=$(grep UUID /etc/fstab)
+    DEVICES=$(grep 'UUID=[[:alnum:]] /etc/fstab |cut -d ' ' -f1)
     }
