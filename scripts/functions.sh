@@ -58,5 +58,9 @@ clearStick () {
 
 get_UUID () {
     # Usage: First run the script, then insert the stick when prompted.
-    DEVICES=$(grep 'UUID=[[:alnum:]] /etc/fstab |cut -d ' ' -f1)
+    # DEVICES=$(grep 'UUID=[[:alnum:]] /etc/fstab |cut -d ' ' -f1)
+    # instead use
+    ls -l /dev/disk/by-uuid
+    # to resolve links to /dev/sd[a-z] and cut as appropriate
+    
     }
