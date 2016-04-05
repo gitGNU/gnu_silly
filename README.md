@@ -65,7 +65,7 @@ Boot into a Debian Live image and run...
    2. type `ls` to get a list of available devices.
    3. type `set root=(DEVICE,PARTITION)` where DEVICE is something like `usb0` and PARTITION looks like `msdos1`. You can tab-complete these. When $root is set it enables you to enter paths with the selected device / partition as the root, i.e. /live/boot/vmlinuz instead of (hd0, msdos1)/live/boot/vmlinuz
    4. use `ls` to inspect the filesystem and find the files vmlinuz and initrd.gz. On a Debian-like install dingus this will be under /live or under /install. Since you are installing, use /install.
-   5. type `[command] [path-to-vmlinuz]` for [command] each of `linux` and `initrd`, e.g. `linux /live/boot/vmlinuz`
+   5. type `[command] [path-to-vmlinuz]` where [command] is each of `linux` and `initrd`, e.g. `linux /live/boot/vmlinuz`
    6. type `boot`  and GRUB should boot into the installer. If it fails, file an issue here please.
    
 ## What's included in this project
@@ -73,28 +73,11 @@ Boot into a Debian Live image and run...
   * scripts for producing USB-HDD filesystem for working on laptops (using debootstrap and friends)
   * PXE images for use with [PXE Install Server](https://github.com/freegeek-seattle/install_pxeserver)
   * automation around building Libreboot images
-  
-## Caveats
-  
-  * as of 20160306 the scripts don't work. 
-    They are dangerous in the wrong hands, so don't run them if you don't know what you are doing.
-    Don't run them even if you *do* know what you are doing, but do use them as a guide for entering commands into the shell if that helps.
-    
-  * Intel chipset T60 and X60 Tablet have 32-bit memory controller. These machines can't use the full 4GB RAM if you put 2x2GB sticks in them. 
-  ** As of 20160405 it appears that the machines run OK with 2x2GB or 1x2GB + 1x1GB but further testing is needed.
-  
-  * This list should be 'issues' on the GitHub issue tracker as long as this is hosted on GitHub.
-  
-  * Given the Libreboot project's attitude toward GitHub this should probably not be hosted there.
-  
-  
-## TODO
-  
-  *  First version of scripts will only support MBR and not add swap; in future GPT and UEFI support is desirable.
-  *  Automation to install Trisquel / Gnewsense / Parabola or whatever instead of Debian (after I get Debian working)
-  * Add some customization: 
-  ** libreboot_grub.cfg
-  ** thinkfan configs + script to go full-speed on AC
+  * configuration to make the Libreboot experience nicer and/or more secure
+    1. add libreboot_grub.cfg
+    2. thinkfan config and possibly automation to customize same
+    3. bootloader only in cbfs for really-full-disk encryption: https://libreboot.org/docs/gnulinux/encrypted_trisquel.html
+
   
   
   
