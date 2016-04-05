@@ -60,8 +60,14 @@ Boot into a Debian Live image and run...
   This process may not be rendered non-interactive because of the two steps requiring a reboot between them.
   
 3. When the flash is complete it's time to install the OS. iirc Libreboot uses GRUB2 as payload, so installing may require some GRUB hacking in order to coax the machines to use the install media.
-  Debian or Trisquel? IMO Debian main is 'free enough', but ymmv.
-  
+   Here's how to get GRUB to boot your install media:
+   1. Enter GRUB command line by pressing `c' at the menu.
+   2. type `ls` to get a list of available devices.
+   3. type `set root=(DEVICE,PARTITION)` where DEVICE is something like `usb0` and PARTITION looks like `msdos1`. You can tab-complete these. When $root is set it enables you to enter paths with the selected device / partition as the root, i.e. /live/boot/vmlinuz instead of (hd0, msdos1)/live/boot/vmlinuz
+   4. use `ls` to inspect the filesystem and find the files vmlinuz and initrd.gz. On a Debian-like install dingus this will be under /live or under /install. Since you are installing, use /install.
+   5. type `[command] [path-to-vmlinuz]` for [command] each of `linux` and `initrd`, e.g. `linux /live/boot/vmlinuz`
+   6. type `boot`  and GRUB should boot into the installer. If it fails, file an issue here please.
+   
 ## What's included in this project
   
   * scripts for producing USB-HDD filesystem for working on laptops (using debootstrap and friends)
