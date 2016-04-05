@@ -71,12 +71,19 @@ Boot into a Debian Live image and run...
 ## Caveats
   
   * as of 20160306 the scripts don't work. 
-  They are dangerous in the wrong hands, so don't run them if you don't know what you are doing.
-  Don't run them even if you *do* know what you are doing, but do use them as a guide for entering commands into the shell if that helps.
+    They are dangerous in the wrong hands, so don't run them if you don't know what you are doing.
+    Don't run them even if you *do* know what you are doing, but do use them as a guide for entering commands into the shell if that helps.
+    
+  * Intel chipset T60 and X60 Tablet have 32-bit memory controller. These machines can't use the full 4GB RAM if you put 2x2GB sticks in them. 
+  ** As of 20160405 it appears that the machines run OK with 2x2GB or 1x2GB + 1x1GB but further testing is needed.
+  
   
 ## TODO
   
-### First version of scripts will only support MBR and not add swap; in future GPT and UEFI support is desirable.
+  *  First version of scripts will only support MBR and not add swap; in future GPT and UEFI support is desirable.
+  * Add some customization: 
+  ** libreboot_grub.cfg
+  ** thinkfan configs + script to go full-speed on AC
   
   
   
