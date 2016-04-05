@@ -77,10 +77,15 @@ Boot into a Debian Live image and run...
   * Intel chipset T60 and X60 Tablet have 32-bit memory controller. These machines can't use the full 4GB RAM if you put 2x2GB sticks in them. 
   ** As of 20160405 it appears that the machines run OK with 2x2GB or 1x2GB + 1x1GB but further testing is needed.
   
+  * This list should be 'issues' on the GitHub issue tracker as long as this is hosted on GitHub.
+  
+  * Given the Libreboot project's attitude toward GitHub this should probably not be hosted there.
+  
   
 ## TODO
   
   *  First version of scripts will only support MBR and not add swap; in future GPT and UEFI support is desirable.
+  *  Automation to install Trisquel / Gnewsense / Parabola or whatever instead of Debian (after I get Debian working)
   * Add some customization: 
   ** libreboot_grub.cfg
   ** thinkfan configs + script to go full-speed on AC
