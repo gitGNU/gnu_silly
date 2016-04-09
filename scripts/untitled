@@ -1,4 +1,0 @@
-#!/bin/sh
-
-# Usage: setup.sh [uuid|pxe]
-# Where uuid is 
