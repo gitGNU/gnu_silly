@@ -14,6 +14,9 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with SILLY.  If not, see <http://www.gnu.org/licenses/>.
+
+# Copyright © 2016 Andrew Kane <akane@freegeekseattle.org>
+
 set -x
 
 . ~/Projects/SILLY/scripts/functions.sh

@@ -21,6 +21,9 @@ set -x
 # the target device, and pxe means to install to a local 
 # directory /srv/ARCH or PATH instead of a device.
 
+# Copyright © 2016 Andrew Kane <akane@freegeekseattle.org>
+
+
 . ./functions.sh
 
 [ -z $(sudo fdisk -l | grep sdc[[::digit:]]) ] || clearStick

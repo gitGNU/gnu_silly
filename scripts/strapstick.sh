@@ -20,6 +20,8 @@ set -x
 # You should have received a copy of the GNU General Public License
 # along with SILLY.  If not, see <http://www.gnu.org/licenses/>.
 
+# Copyright © 2016 Andrew Kane <akane@freegeekseattle.org> 
+
 . ./functions.sh
 
 TARGET_DEVICE="/dev/disk/by-uuid/$1"

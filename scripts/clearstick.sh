@@ -1,8 +1,9 @@
 #!/bin/sh
 
-#Usage: `./clearstick [DEVICE] purge`
-#DEVICE => /dev/sd[a-z]
-#Zaps the partition table of DEVICE and optionally wipe the device.
+# Usage: `./clearstick [DEVICE] purge`
+# DEVICE => /dev/sd[a-z]
+# Zap the partition table of DEVICE and optionally wipe the device.
+
 # This file is part of SILLY
 
 # SILLY is free software: you can redistribute it and/or modify
@@ -17,6 +18,9 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with SILLY.  If not, see <http://www.gnu.org/licenses/>.
+
+# Copyright © 2016 Andrew Kane <akane@freegeekseattle.org>
+
 
 TARGET_DEVICE="/dev/disk/by-uuid/$1"
 
