@@ -78,8 +78,9 @@ Boot into a Debian Live image and run...
   * automation around building Libreboot images
   * configuration to make the Libreboot experience nicer and/or more secure
     1. add libreboot_grub.cfg
-    2. thinkfan config and possibly automation to customize same
-    3. bootloader only in cbfs for really-full-disk encryption: https://libreboot.org/docs/gnulinux/encrypted_trisquel.html
+    2. `apt install tp-smapi-dkms tpb thinkfan`
+    3. thinkfan config and possibly automation to customize same
+    4. bootloader only in cbfs for really-full-disk encryption: https://libreboot.org/docs/gnulinux/encrypted_trisquel.html
 
   
   
